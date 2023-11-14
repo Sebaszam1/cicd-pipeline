@@ -20,7 +20,7 @@ pipeline {
         }
         stage('Install') {
             steps {
-                sh "${NODEJS_HOME}/bin/npm install"
+                sh "npm install"
             }
         }
         stage('Test') {
