@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Install') {
+        stage('Echo') {
             steps {
                 sh 'ECHO hola'
             }
