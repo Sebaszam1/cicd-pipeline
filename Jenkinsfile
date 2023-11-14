@@ -1,7 +1,11 @@
 pipeline {
     agent any
 
-    tools {NodeJS "node"}
+    environment {
+        NODEJS_HOME = tool 'NodeJS' // Assumes 'NodeJS' is the label for the NodeJS tool in global tools configuration
+        DOCKER_MAIN_IMAGE = 'nodemain:v1.0'
+        DOCKER_DEV_IMAGE = 'nodedev:v1.0'
+    }
 
     stages {
         stage('Echo') {
@@ -11,7 +15,7 @@ pipeline {
         }
         stage('Install') {
             steps {
-                sh 'npm install'
+                sh "${NODEJS_HOME}/bin/npm install"
             }
         }
         stage('Test') {
