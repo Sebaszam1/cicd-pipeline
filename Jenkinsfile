@@ -8,6 +8,11 @@ pipeline {
     }
 
     stages {
+        stage('Print PATH') {
+            steps {
+                sh 'echo $PATH'
+            }
+}
         stage('Echo') {
             steps {
                 sh 'ECHO hola'
