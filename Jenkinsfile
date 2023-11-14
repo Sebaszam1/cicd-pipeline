@@ -1,7 +1,7 @@
 pipeline {
     agent any
 
-    tools {NodeJS "NodeJS"}
+    tools {NodeJS "node"}
 
     stages {
         stage('Echo') {
