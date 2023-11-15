@@ -38,7 +38,7 @@ pipeline {
             }
         }
 
-        stage('Stop and remove container'){
+        stage('Run container'){
             steps {
                 script {
                     if(env.BRANCH_NAME == 'main'){
