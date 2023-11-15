@@ -23,6 +23,7 @@ pipeline {
                 script {
                     if(env.BRANCH_NAME == 'main'){
                         sh 'pwd'
+                        sh 'ls'
                         sh "docker build -t ${DOCKER_MAIN_IMAGE} ."
                     }else if(env.BRANCH_NAME == 'dev'){
                         sh "docker build -t ${DOCKER_DEV_IMAGE} ."
