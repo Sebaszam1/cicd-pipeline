@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Echo') {
             steps {
-                sh 'ls'
+                sh 'pwd'
             }
         }
         stage('Install') {
