@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Echo') {
             steps {
-                sh 'npm version'
+                sh 'pwd'
             }
         }
         stage('Install') {
