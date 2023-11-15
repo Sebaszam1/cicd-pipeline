@@ -18,7 +18,6 @@ pipeline {
             }
         }
         stage('Build docker image') {
-            agent any
             steps {
                 script {
                     if(env.BRANCH_NAME == 'main'){
