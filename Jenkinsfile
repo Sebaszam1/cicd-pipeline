@@ -1,7 +1,7 @@
 pipeline {
     agent any
 
-    enviroment {
+    environment {
         DOCKER_MAIN_IMAGE = 'nodemain:v1.0'
         DOCKER_DEV_IMAGE = 'nodedev:v1.0'
     }
@@ -29,7 +29,7 @@ pipeline {
             }
         }
 
-        step('Stop and remove container'){
+        stage('Stop and remove container'){
             steps {
                 script {
                     sh 'docker stop $(docker ps -q) || true'
@@ -38,7 +38,7 @@ pipeline {
             }
         }
 
-        step('Stop and remove container'){
+        stage('Stop and remove container'){
             steps {
                 script {
                     if(env.BRANCH_NAME == 'main'){
