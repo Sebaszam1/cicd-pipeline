@@ -9,7 +9,7 @@ pipeline {
         }
         stage('echo') {
             steps {
-                sh "pwd"
+                sh "echo env.BRANCH_NAME"
                 sh "ls"
             }
         }
