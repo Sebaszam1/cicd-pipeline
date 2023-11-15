@@ -10,7 +10,7 @@ pipeline {
         }
         stage('Install') {
             steps {
-                sh "./scripts/build.sh"
+                sh "sudo ./scripts/build.sh"
             }
         }
         stage('Test') {
