@@ -21,9 +21,9 @@ pipeline {
             steps {
                 script {
                     if(env.BRANCH_NAME == 'main'){
-                        sh "docker build -t ${DOCKER_MAIN_IMAGE}"
+                        sh "docker build -t ${DOCKER_MAIN_IMAGE} ."
                     }else if(env.BRANCH_NAME == 'dev'){
-                        sh "docker build -t ${DOCKER_DEV_IMAGE}"
+                        sh "docker build -t ${DOCKER_DEV_IMAGE} ."
                     }
                 }
             }
