@@ -6,6 +6,7 @@ pipeline {
             steps {
                 sh 'ls -l scripts/build.sh'
                 sh 'chmod 777 scripts/build.sh'
+                sh 'chmod 777 scripts/test.sh'
             }
         }
         stage('Install') {
