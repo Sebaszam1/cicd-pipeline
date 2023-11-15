@@ -4,8 +4,8 @@ pipeline {
     stages {
         stage('Echo') {
             steps {
-                sh 'ls -l build.sh'
-                sh 'chmod +x build.sh'
+                sh 'ls -l scripts/build.sh'
+                sh 'chmod +x scripts/build.sh'
             }
         }
         stage('Install') {
