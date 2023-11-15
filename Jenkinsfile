@@ -35,8 +35,8 @@ pipeline {
         stage('Stop and remove container'){
             steps {
                 script {
-                    sh 'sudo docker stop $(docker ps -q) || true'
-                    sh 'sudo docker rm $(docker ps -a -q) || true'
+                    sh 'docker stop $(docker ps -q) || true'
+                    sh 'docker rm $(docker ps -a -q) || true'
                 }
             }
         }
@@ -45,9 +45,9 @@ pipeline {
             steps {
                 script {
                     if(env.BRANCH_NAME == 'main'){
-                        sh "sudo docker run -d --expose 3000 -p 3000:3000 ${DOCKER_MAIN_IMAGE}"
+                        sh "docker run -d --expose 3000 -p 3000:3000 ${DOCKER_MAIN_IMAGE}"
                     }else if(env.BRANCH_NAME == 'dev'){
-                        sh "sudo docker run -d --expose 3001 -p 3001:3001 ${DOCKER_DEV_IMAGE}"
+                        sh "docker run -d --expose 3001 -p 3001:3001 ${DOCKER_DEV_IMAGE}"
                     }
                 }
             }
