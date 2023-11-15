@@ -9,7 +9,6 @@ pipeline {
                 }
             }
         }
-}
         stage('Echo') {
             steps {
                 sh 'ECHO hola'
