@@ -48,7 +48,7 @@ pipeline {
                     if(env.BRANCH_NAME == 'main'){
                         sh "docker run -d --expose 3000 -p 3000:3000 ${DOCKER_MAIN_IMAGE}"
                     }else if(env.BRANCH_NAME == 'dev'){
-                        sh "docker run -d --expose 3001 -p 3001:3001 ${DOCKER_DEV_IMAGE}"
+                        sh "docker run -d --expose 3001 -p 3000:3001 ${DOCKER_DEV_IMAGE}"
                     }
                 }
             }
