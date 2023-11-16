@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent { node { label 'Ubuntu for docker' } }
 
     environment {
         DOCKER_MAIN_IMAGE = 'nodemain:v1.0'
